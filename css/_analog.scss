@@ -1,0 +1,93 @@
+// Import Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+
+// Constants
+$analog-clock-border-color: #ffffffdd;
+$analog-clock-shadow-color: #3b73ac;
+$analog-hour-color: #ffffff4d;
+$analog-minute-color: #ffffff80;
+$analog-second-color: white;
+$analog-center-color: white;
+
+// Main Clock Styles
+.main__clock {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// Clock Components Styles
+.main__clock-components {
+  margin: 10px;
+}
+
+// Analog Clock Styles
+.main__analog-clock {
+  width: 75vmin;
+  height: 75vmin;
+  min-width: 300px;
+  min-height: 300px;
+  max-width: 450px;
+  max-height: 450px;
+  background-size: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: auto;
+  box-shadow: 0 0 0 0.4vw $analog-clock-border-color,
+    inset 0 0 2vw 1vw $analog-clock-shadow-color;
+}
+
+// Analog Clock Hands Styles
+.main__analog-hour,
+.main__analog-minute,
+.main__analog-second {
+  position: absolute;
+  bottom: 50%;
+  border-radius: 20vw;
+  transform-origin: bottom;
+}
+
+.main__analog-hour {
+  width: 1.5%;
+  height: 28%;
+  left: 49.16%;
+  background-color: $analog-hour-color;
+  z-index: 3;
+}
+
+.main__analog-minute {
+  width: 0.9%;
+  height: 32%;
+  left: 49.5%;
+  background-color: $analog-minute-color;
+  z-index: 2;
+}
+
+.main__analog-second {
+  width: 1px;
+  height: 35%;
+  left: 49.85%;
+  background-color: $analog-second-color;
+  z-index: 1;
+}
+
+// Analog Clock Center Styles
+.main__analog-center {
+  width: 4%;
+  height: 4%;
+  border-radius: 50%;
+  background-color: $analog-center-color;
+  z-index: 4;
+}
+
+// Media Query for Analog Clock
+@media (max-height: 700px) {
+  .main__analog-clock {
+    width: 65vmin !important;
+    height: 65vmin !important;
+  }
+}

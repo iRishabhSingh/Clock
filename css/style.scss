@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  color: whitesmoke;
+  background: #0f1f2a;
+  font-family: system-ui, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+@import "./const";
+@import "./nav";
+@import "./main";
+@import "./analog";
+@import "./digital";
+@import "./footer";

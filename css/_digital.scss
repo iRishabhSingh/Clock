@@ -1,0 +1,98 @@
+// Import Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap");
+
+// Main Digital Clock Styles
+.main__clock--digital {
+  display: none;
+}
+
+.main__digital-clock {
+  width: 81vmin;
+  height: 27vmin;
+  min-width: 300px;
+  max-width: 600px;
+  min-height: 116px;
+  max-height: 200px;
+  border: 3px solid whitesmoke;
+  border-radius: 30px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: "Signika", sans-serif;
+  transition: box-shadow 300ms ease-in-out;
+  box-shadow: 5.5px -5.5px 0 7.5px #ffffffa0, -5.5px 5.5px 0 7.5px #1a6ea770;
+
+  &:hover {
+    transition: 300ms ease-in-out;
+    box-shadow: -5.5px 5.5px 0 7.5px #ffffff80, 5.5px -5.5px 0 7.5px #1a6ea770;
+  }
+
+  .main__digital-time {
+    font-size: 17vmin;
+  }
+
+  > div {
+    position: absolute;
+    top: 0;
+  }
+
+  > div > span {
+    display: inline-block;
+    text-align: center;
+    width: 19vmin;
+  }
+
+  #blinkColon,
+  #ampmIndicator {
+    width: auto;
+    transition: color 200ms ease-in-out;
+  }
+
+  #ampmIndicator {
+    font-family: "Balsamiq Sans", cursive;
+    font-size: 6.7vmin;
+  }
+
+  .main__digital-date {
+    font-family: "Balsamiq Sans", cursive;
+    display: inline-block;
+    font-size: 5.5vmin;
+    top: 70%;
+
+    span {
+      width: auto !important;
+    }
+  }
+}
+
+// Media Query for Responsive Digital Clock
+@media (max-width: 436.7px) {
+  .main__digital-clock > div > span {
+    width: 78px !important;
+  }
+
+  #blinkColon,
+  #ampmIndicator {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+
+  #ampmIndicator {
+    font-size: 14px !important;
+  }
+
+  .main__digital-date {
+    font-size: 24px !important;
+
+    span {
+      width: auto !important;
+    }
+  }
+
+  .main__digital-time {
+    font-size: 58px !important;
+  }
+}

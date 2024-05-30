@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head Tag -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Digital and Analog Clock with JavaScript | JavaScript is Powerful! See how implementing JavaScript changed the look of my WebApp as a beginner."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="shortcut icon" href="./icon/clock.ico" type="image/x-icon" />
+    <title>Web Clock App</title>
+  </head>
+
+  <!-- Body Tag -->
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <button
+              id="analogNavLink"
+              onclick="activeNav('analogNavLink')"
+              class="header__nav-link header__nav-link--selected"
+            >
+              Analog
+            </button>
+          </li>
+
+          <li class="header__nav-item">
+            <button
+              id="digitalNavLink"
+              class="header__nav-link"
+              onclick="activeNav('digitalNavLink')"
+            >
+              Digital
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <section class="main__clock main__clock--analog" id="analogClockSection">
+        <label for="analogBackgroundCheckbox" class="main__label">
+          Background:
+          <input
+            id="analogBackgroundCheckbox"
+            type="checkbox"
+            name="analogBackgroundCheckbox"
+            class="toggle-switch main__toggle-switch"
+            onchange="toggleAnalogBackground()"
+          />
+        </label>
+        <div class="main__clock-components" id="analogClockComponents">
+          <div class="main__analog-clock" id="analogClock">
+            <div class="main__analog-hour" id="analogHourHand"></div>
+            <div class="main__analog-minute" id="analogMinuteHand"></div>
+            <div class="main__analog-second" id="analogSecondHand"></div>
+            <div class="main__analog-center" id="analogCenter"></div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="main__clock main__clock--digital"
+        id="digitalClockSection"
+      >
+        <label for="hourFormatCheckbox" class="main__label">
+          24-hour format:
+          <input
+            type="checkbox"
+            name="hourFormatCheckbox"
+            class="toggle-switch main__toggle-switch"
+            id="hourFormatCheckbox"
+            onchange="twentyFourHourFormat()"
+          />
+        </label>
+        <div class="main__clock-components" id="digitalClockComponents">
+          <div class="main__digital-clock" id="digitalClock">
+            <div class="main__digital-time" id="digitalTime">
+              <span id="hourDigit">00</span>:<span id="minuteDigit">00</span
+              ><span id="blinkColon">:</span><span id="secondDigit">00</span
+              ><span id="ampmIndicator">AM</span>
+            </div>
+            <div class="main__digital-date" id="digitalDate">
+              <span id="weekDay">MON</span> <span id="dayDate">01</span>
+              <span id="monthDate">JAN</span> <span id="yearDate">1960</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__details">
+        <span class="footer__project">
+          <strong class="footer__project-number">#1</strong><br />
+          JavaScript Project
+        </span>
+        <p class="footer__copyright">
+          Copyright © 2022 |
+          <a
+            target="_blank"
+            class="footer__link"
+            rel="noopener noreferrer"
+            href="https://iRishabhSingh.vercel.app"
+            >iRishabhSingh.com</a
+          >
+        </p>
+      </div>
+    </footer>
+
+    <script src="./js/nav.js"></script>
+    <script src="./js/analog.js"></script>
+    <script src="./js/digital.js"></script>
+  </body>
+</html>
